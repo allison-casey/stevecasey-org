@@ -24,3 +24,20 @@ img {
   margin: 20px 0;
   max-width: 200px;
 }
+
+.background {
+  background-image: url("../public/metro-was-a-mistake.jpg");
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+.title {
+  font-size: 125px;
+  font-family: sans-serif;
+  color: white;
+  font-weight: bold;
+}
