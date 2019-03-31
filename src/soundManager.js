@@ -1,7 +1,7 @@
 import {Howl, Howler} from "howler";
 
 const sounds = {
-  bullet: new Howl({src: ["gun.wav"]})
+  scream: new Howl({src: ["markiplier-screaming.wav"], loop: true})
 };
 
 const soundManager = callback => soundToPlay => {

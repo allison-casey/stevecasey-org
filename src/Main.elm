@@ -37,9 +37,7 @@ type alias Model =
 init : ( Model, Cmd Msg )
 init =
     ( { playingSound = False, width = 0, height = 0 }
-    , Cmd.batch
-        [ Task.perform (\{ viewport } -> Resize viewport.width viewport.height) getViewport
-        ]
+    , Task.succeed (PlaySound "scream") |> Task.perform identity
     )
 
 
@@ -64,9 +62,7 @@ update msg model =
                         Cmd.none
 
                     else
-                        Cmd.none
-
-                -- sounds "bullet"
+                        sounds "scream"
             in
             ( { model | playingSound = True }
             , command
@@ -90,7 +86,7 @@ view : Model -> Html Msg
 view { width, height } =
     div [ class "foreground" ]
         [ h1
-            [ class "title" ]
+            [ onClick (PlaySound "scream"), class "title" ]
             [ text "Metro Was A Mistake" ]
         ]
 
