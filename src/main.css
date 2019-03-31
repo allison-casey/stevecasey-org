@@ -14,27 +14,27 @@ body {
   margin: 0;
   text-align: center;
   color: #293c4b;
+  background-image: url('../public/metro-was-a-mistake.jpg')
 }
 
-h1 {
-  font-size: 30px;
-}
 
 img {
   margin: 20px 0;
   max-width: 200px;
 }
 
-.background {
-  background-image: url("../public/metro-was-a-mistake.jpg");
+
+.foreground {
+  position: absolute;
+  width: 100vw;
   height: 100vh;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display:flex;
-  align-items: center;
+  top: 0;
+  display: flex;
   justify-content: center;
+  flex-direction: column;
 }
+
+
 .title {
   font-size: 125px;
   font-family: sans-serif;

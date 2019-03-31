@@ -11,12 +11,79 @@
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-    <title>Elm App</title>
+    <script src='http://unpkg.com/elm-canvas/elm-canvas.js'></script>
+    <script src="./beaverDrops.js"></script>
+    <!-- <script type="text/javascript">
+    var ctx;
+    var imgBg;
+    var imgDrops;
+    var x = 0;
+    var y = 0;
+    var noOfDrops = 50;
+    var fallingDrops = [];
+
+
+        function drawBackground(){
+            // ctx.drawImage(imgBg, 0, 0); //Background
+            ctx.save();
+            ctx.setTransform(1, 0, 0, 1, 0, 0);
+            ctx.clearRect(0, 0, 1920, 1080)
+            ctx.restore();
+        }
+
+        function draw() {
+            drawBackground();
+            // ctx.clearRect(0, 0, canvas.width, canvas.height)
+
+            for (var i=0; i< noOfDrops; i++)
+            {
+            ctx.drawImage (fallingDrops[i].image, fallingDrops[i].x, fallingDrops[i].y, 50, 50); //The rain drop
+
+            fallingDrops[i].y += fallingDrops[i].speed; //Set the falling speed
+            if (fallingDrops[i].y > 1100) {  //Repeat the raindrop when it falls out of view
+            fallingDrops[i].y = -100 //Account for the image size
+            fallingDrops[i].x = Math.random() * 1920;    //Make it appear randomly along the width
+            }
+
+            }
+        }
+
+        function setup() {
+            var canvas = document.getElementById('canvasRegion');
+            console.log(canvas)
+
+            if (canvas.getContext) {
+                    ctx = canvas.getContext('2d');
+
+                        imgBg = new Image();
+                imgBg.src = "metro-was-a-mistake.jpg";
+            setInterval(draw, 36);
+            for (var i = 0; i < noOfDrops; i++) {
+                var fallingDr = new Object();
+                fallingDr["image"] =  new Image();
+            fallingDr.image.src = 'Beaver.png';
+
+                fallingDr["x"] = Math.random() * 1920;
+                fallingDr["y"] = Math.random() * 1080 - 100;
+                fallingDr["speed"] = 3 + Math.random() * 5;
+                fallingDrops.push(fallingDr);
+                }
+
+            }
+        }
+
+
+
+
+    setup(); -->
+    <!-- </script> -->
+    <title>Metro Was A Mistake</title>
 </head>
-<body>
+<body onload="setup();">
     <noscript>
         You need to enable JavaScript to run this app.
     </noscript>
+    <canvas id="canvasRegion" width="1920" height="1080"></canvas>
     <div id="root"></div>
 </body>
 </html>
